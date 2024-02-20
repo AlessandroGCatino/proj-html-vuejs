@@ -19,13 +19,16 @@
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixin.scss' as *;
 .back{
     background-image: url("../assets/img/horizontal-cta-background.jpg");
-    background-position: center;
-    background-size: cover;
+    @include adj-bg;
     color: white;
     &>div{
-        padding-block: 60px;
+        padding-block: 70px;
+        p{
+            font-size: 22px;
+        }
     }
     .phone{
         font-size: 30px;

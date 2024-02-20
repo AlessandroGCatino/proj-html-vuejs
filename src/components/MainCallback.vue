@@ -44,8 +44,9 @@
 </script>
 
 <style lang="scss" scoped>
-@use '../styles/partials/variables.scss' as *;
 
+@use '../styles/partials/variables.scss' as *; 
+@use '../styles/partials/mixin.scss' as *;
 #line{
     background-color: $light-gray;
 }
@@ -62,27 +63,15 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 60px;
-    h1{
-        color: $dark-gray;
-    }
-    p,
-    small{
-        color: $gray;
-    }
+    
     .callback{
-        border-radius: 20px;
-        text-align: center;
-        width: 100%;
-        padding: 30px;
-        background-color: $white;
-        box-shadow: -2px 10px 10px 0px rgba(128, 128, 128, 0.1), 2px 0px 10px 0px rgba(128, 128, 128, 0.1);
+        @include shifted-card;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 30px;
         input{
             padding: 15px 20px;
-            
             background-color: $light-gray;
             &::placeholder{
                 color: $gray;

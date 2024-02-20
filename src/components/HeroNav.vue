@@ -45,14 +45,14 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/mixin.scss' as *;
 
 .btn{
     margin-left: 30px;
 }
 .hero{
     background-image: url("../assets/img/homepage-hero-background.jpg");
-    background-position: center;
-    background-size: cover;
+    @include adj-bg;
     .hero-nav{
         background-color: rgba(50, 50, 50, 0.5);
         padding: 20px;
