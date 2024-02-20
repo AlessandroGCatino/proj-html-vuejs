@@ -1,14 +1,17 @@
 <template>
     <MainCallback/>
+    <MainCTA/>
 </template>
 
 <script>
 import MainCallback from './MainCallback.vue';
+import MainCTA from './MainCTA.vue';
 
 export default {
     name: "MainContent",
     components: {
-        MainCallback
+        MainCallback,
+        MainCTA
     },
     data () {
         return {
