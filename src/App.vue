@@ -31,5 +31,18 @@
 <style lang="scss">
 
 @use "./styles/general.scss";
+@use './styles/partials/variables.scss' as *;
+
+.btn{
+    background-color: $green;
+    border: 3px solid $green;
+    padding: 6px 20px;
+    border-radius: 30px;
+    &:hover{
+        background-color: transparent;
+        border: 3px solid $green;
+        color: $green;
+    }
+}
 
 </style>

@@ -47,10 +47,6 @@ export default {
 @use '../styles/partials/variables.scss' as *;
 
 .btn{
-    background-color: $green;
-    border: $green;
-    padding: 6px 20px;
-    border-radius: 30px;
     margin-left: 30px;
 }
 .hero{
