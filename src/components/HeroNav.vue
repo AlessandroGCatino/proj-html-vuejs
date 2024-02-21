@@ -79,15 +79,16 @@ export default {
                     }
                     &:hover{
                         color: $green;
-                        &::after{
+                        border-bottom: 3px solid $green;
+                        // &::after{
 
-                            position: absolute;
-                            content: "";
-                            width: 80%;
-                            left: 10%;
-                            bottom: -5px;
-                            border-bottom: 3px solid $green;
-                            }
+                        //     position: absolute;
+                        //     // content: "";
+                        //     width: 80%;
+                        //     left: 10%;
+                        //     bottom: -5px;
+                        //     border-bottom: 3px solid ;
+                        //     }
                         }
                     }
                 }
