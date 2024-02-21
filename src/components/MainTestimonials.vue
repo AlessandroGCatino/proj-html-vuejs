@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" :class="isChanging?'fade':''">
         <figure>
             <img :src="currentTestimonial.image" :alt="currentTestimonial.name">
         </figure>
@@ -9,7 +9,7 @@
             <div v-for="(element, index) in store.testimonials" 
             :key="index" 
             class="dot"
-            :class="index == store.selected ? 'active' : ''"
+            :class="[index == store.selected?'active':'']"
             @click="setActive(index)"></div>
         </div>
     </div>
@@ -27,11 +27,17 @@ export default {
         data(){
             return{
                 store,
+                isChanging: false
             }
         },
         methods:{
             setActive(index){
-                store.selected = index
+                
+                this.isChanging = true
+                setTimeout(() => {
+                    store.selected = index
+                    this.isChanging = false
+                }, 600)
             }
         }
     }
@@ -42,6 +48,7 @@ export default {
 @use '../styles/partials/variables.scss' as *;
 
 div.container{
+    transition: all 0.6s;
     margin-top: 50px;
     @include flex-column;
     gap: 30px;
@@ -72,5 +79,10 @@ div.container{
             background-color: $gray;
         }
     }
+}
+
+.div.container.fade{
+    transition: all 0.6s;
+    opacity: 0;
 }
 </style>
