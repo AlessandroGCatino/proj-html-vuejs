@@ -1,5 +1,5 @@
 <template>
-    <div class="back2">
+    <div class="back">
         <div class="container d-flex">
             <div class="col-4">
                 <div class="promise top-break">
@@ -54,7 +54,7 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.back2{
+.back{
     background-image: url("../assets/img/promise-backgroundv3.jpg");
     @include adj-bg;
 
@@ -82,7 +82,7 @@
             @include flex-column;
             gap: 10px;
 
-            padding: 20px 0 40px;
+            padding: 20px 0 50px;
             figure{
                 margin: 0;
                 width: 150px;
