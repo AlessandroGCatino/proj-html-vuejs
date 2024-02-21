@@ -49,6 +49,9 @@
     padding: 40px;
     @include flex-column;
     gap: 10px;
+    &:hover{
+        transform: translateY(10px);
+    }
     &>div{
         display: flex;
         gap: 20px;
