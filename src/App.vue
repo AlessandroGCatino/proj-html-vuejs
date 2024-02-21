@@ -34,6 +34,8 @@
 @use './styles/partials/variables.scss' as *;
 
 .btn{
+    color: $white;
+    font-weight: 500;
     background-color: $green;
     border: 3px solid $green;
     padding: 6px 20px;
