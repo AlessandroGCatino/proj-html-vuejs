@@ -24,7 +24,15 @@
                     <p>When you make a block booking with us your first lesson is included free</p>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Your Name*" v-model="newCallback.name">
-                        <span class="input-group-text"><img src="../assets/img/nametag.png" alt="nametag" title="Rubrica"></span>
+                        <span class="input-group-text">
+                            <img src="../assets/img/nametag.png" alt="nametag" title="Rubrica" @click="mostraRubrica()">
+
+                            <div class="rubrica" :class="show?'show':''">
+                                <div v-for="(elements, index) in rubrica" @click="setContact(index)">
+                                    {{elements.name}}
+                                </div>
+                            </div>
+                        </span>
                     </div>
                     <input type="text" class="form-control" placeholder="Email" v-model="newCallback.mail">
                     <input type="text" class="form-control" placeholder="Telephone" v-model="newCallback.phone">
@@ -49,7 +57,28 @@ import {store} from "../store"
                     mail:"",
                     phone:"",
                     location:""
-                }
+                },
+                show: false,
+                rubrica:[
+                    {
+                        name:"Aldo",
+                        mail:"aldo@mail.it",
+                        phone:"2224457412",
+                        location:"Sicilia"
+                    },
+                    {
+                        name:"Giovanni",
+                        mail:"giova@mail.it",
+                        phone:"2255886969",
+                        location:"Lombardia"
+                    },
+                    {
+                        name:"Giacomo",
+                        mail:"jack@gmail.it",
+                        phone:"1174485465",
+                        location:"Abruzzo"
+                    }
+                ]
             }
         },
         methods:{
@@ -64,7 +93,22 @@ import {store} from "../store"
                 } else {
                     alert("Fill all the fields")
                 }
-            } 
+            },
+            mostraRubrica(){
+                if (this.show){
+                    this.show=false
+                } else {
+                    this.show=true
+                    setTimeout(() => {this.show = false
+                }, 2000)
+                }
+            },
+            setContact(index){
+                this.newCallback.name = this.rubrica[index].name
+                this.newCallback.mail = this.rubrica[index].mail
+                this.newCallback.phone = this.rubrica[index].phone
+                this.newCallback.location = this.rubrica[index].location
+            }
         }
     }
 </script>
@@ -108,8 +152,30 @@ import {store} from "../store"
                 border-right: none;
             }
             span{
+                position: relative;
                 background-color: $light-gray;
                 cursor: pointer;
+                .rubrica.show{
+                    display: block;
+                }
+                .rubrica{
+                    display: none;
+                    text-align: start;
+                    background-color: $light-gray;
+                    width: 150px;
+                    height: fit-content;
+                    position: absolute;
+                    bottom: -100px;
+                    left: -50px;
+                    &>div{
+                        padding: 5px;
+                        border: 1px solid $dark-gray;
+                        &:hover{
+                            background-color: $gray;
+                        }
+                    }
+                }
+
             }
         }
         h2{
