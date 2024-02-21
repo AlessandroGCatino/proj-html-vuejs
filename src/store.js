@@ -39,5 +39,6 @@ export const store = reactive({
             title: "Avada Driving School Expanding"
         }
     ],
-    subscribers: []
+    subscribers: [],
+    callbacks:[]
 })

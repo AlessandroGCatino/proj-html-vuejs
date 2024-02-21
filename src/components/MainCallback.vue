@@ -23,13 +23,13 @@
                     <h2 class="text-capitalize">first lesson free!</h2>
                     <p>When you make a block booking with us your first lesson is included free</p>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Your Name*">
-                        <span class="input-group-text"><img src="../assets/img/nametag.png" alt="nametag"></span>
+                        <input type="text" class="form-control" placeholder="Your Name*" v-model="newCallback.name">
+                        <span class="input-group-text"><img src="../assets/img/nametag.png" alt="nametag" title="Rubrica"></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Email">
-                    <input type="text" class="form-control" placeholder="Telephone">
-                    <input type="text" class="form-control" placeholder="Location">
-                    <span class="btn">request a callback</span>
+                    <input type="text" class="form-control" placeholder="Email" v-model="newCallback.mail">
+                    <input type="text" class="form-control" placeholder="Telephone" v-model="newCallback.phone">
+                    <input type="text" class="form-control" placeholder="Location" v-model="newCallback.location">
+                    <span class="btn" @click="getAppointment()">request a callback</span>
                     
                 </div>
             </div>
@@ -38,8 +38,34 @@
 </template>
 
 <script>
+import {store} from "../store"
     export default {
-        name: "MainCallback"
+        name: "MainCallback",
+        data(){
+            return{
+                store,
+                newCallback:{
+                    name:"",
+                    mail:"",
+                    phone:"",
+                    location:""
+                }
+            }
+        },
+        methods:{
+            getAppointment(){
+                if (this.newCallback.name != "" && this.newCallback.mail != "" && this.newCallback.phone != "" && this.newCallback.location != ""){
+                    store.callbacks.push(this.newCallback)
+                    alert("We'll contact you as soon as possible!")
+                    this.newCallback.name = ""
+                    this.newCallback.mail = ""
+                    this.newCallback.phone = ""
+                    this.newCallback.location = ""
+                } else {
+                    alert("Fill all the fields")
+                }
+            } 
+        }
     }
 </script>
 
