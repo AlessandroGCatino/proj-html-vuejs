@@ -30,6 +30,8 @@
         <p>Here's what our happy drivers had to say about our services:</p>
         <MainTestimonials :currentTestimonial="store.testimonials[store.selected]"/>
     </div>
+
+    <LatestNews/>
     
 </template>
 
@@ -40,7 +42,9 @@ import MainCTA from './MainCTA.vue';
 import MainPromise from './MainPromise.vue';
 import MainTestimonials from './MainTestimonials.vue';
 import StatsShowcase from './StatsShowcase.vue';
+
 import {store} from '../store'
+import LatestNews from './LatestNews.vue';
 
 export default {
     name: "MainContent",
@@ -50,7 +54,8 @@ export default {
     MainPromise,
     StatsShowcase,
     InstructorsCards,
-    MainTestimonials
+    MainTestimonials,
+    LatestNews
 },
     data () {
         return {

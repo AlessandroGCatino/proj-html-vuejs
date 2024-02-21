@@ -28,5 +28,15 @@ export const store = reactive({
             quote:"Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.",
             name:"Sophia Sugarcane"
         }
+    ],
+    news:[
+        {
+            image: "src/assets/img/blog-choosecar.jpg",
+            title: "What Car to Start With?"
+        },
+        {
+            image: "src/assets/img/blogpost-10and2.jpg",
+            title: "Avada Driving School Expanding"
+        }
     ]
 })
