@@ -71,7 +71,6 @@
             width: 90%;
             @include flex-column;
             gap: 50px;
-
             
         }
     }
