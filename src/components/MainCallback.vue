@@ -84,12 +84,16 @@ import {store} from "../store"
         methods:{
             getAppointment(){
                 if (this.newCallback.name != "" && this.newCallback.mail != "" && this.newCallback.phone != "" && this.newCallback.location != ""){
-                    store.callbacks.push(this.newCallback)
+                    const newCall = {...this.newCallback}
+                    store.callbacks.push(newCall)
                     alert("We'll contact you as soon as possible!")
-                    this.newCallback.name = ""
-                    this.newCallback.mail = ""
-                    this.newCallback.phone = ""
-                    this.newCallback.location = ""
+                    // setTimeout(() => {
+                        this.newCallback.name = ""
+                        this.newCallback.mail = ""
+                        this.newCallback.phone = ""
+                        this.newCallback.location = ""
+                    // }, 1000)
+                    
                 } else {
                     alert("Fill all the fields")
                 }
