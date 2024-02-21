@@ -32,6 +32,7 @@
     </div>
 
     <LatestNews/>
+    <NewsletterInscription/>
     
 </template>
 
@@ -42,9 +43,10 @@ import MainCTA from './MainCTA.vue';
 import MainPromise from './MainPromise.vue';
 import MainTestimonials from './MainTestimonials.vue';
 import StatsShowcase from './StatsShowcase.vue';
+import LatestNews from './LatestNews.vue';
+import NewsletterInscription from './NewsletterInscription.vue';
 
 import {store} from '../store'
-import LatestNews from './LatestNews.vue';
 
 export default {
     name: "MainContent",
@@ -55,7 +57,8 @@ export default {
     StatsShowcase,
     InstructorsCards,
     MainTestimonials,
-    LatestNews
+    LatestNews,
+    NewsletterInscription
 },
     data () {
         return {

@@ -38,5 +38,6 @@ export const store = reactive({
             image: "src/assets/img/blogpost-10and2.jpg",
             title: "Avada Driving School Expanding"
         }
-    ]
+    ],
+    subscribers: []
 })
